@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShieldAI — AI-Powered Content Moderation API</title>
+  <meta name="description" content="Fast, affordable content moderation for developers. Detect hate speech, profanity, PII, spam, and more in real-time.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Nav -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner container">
+      <a href="#" class="nav-logo">
+        <span class="nav-logo-icon">🛡️</span>
+        <span class="nav-logo-text">ShieldAI</span>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="#features">Features</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#byok">BYOK</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#demo">Demo</a>
+      </div>
+      <div class="nav-actions">
+        <a href="https://shieldai-api-production.up.railway.app/docs" target="_blank" class="btn btn-ghost btn-sm">Docs</a>
+        <a href="#pricing" class="btn btn-primary btn-sm">Get API Key</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <div class="hero-glow"></div>
+      <div class="hero-grid"></div>
+    </div>
+    <div class="container hero-content">
+      <div class="hero-badge animate-in">
+        <span class="badge-dot"></span>
+        Now with multi-model AI support
+      </div>
+      <h1 class="hero-title animate-in">
+        Content moderation<br>
+        <span class="gradient-text">at the speed of trust.</span>
+      </h1>
+      <p class="hero-subtitle animate-in">
+        Detect hate speech, profanity, PII, spam, and more in real-time.<br>
+        Rule-based analysis in <strong>1ms</strong>. AI-powered deep analysis in <strong>500ms</strong>.<br>
+        Bring your own OpenAI or Anthropic key.
+      </p>
+      <div class="hero-actions animate-in">
+        <a href="#pricing" class="btn btn-primary btn-lg">
+          Get API Key
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="https://shieldai-api-production.up.railway.app/docs" target="_blank" class="btn btn-outline btn-lg">
+          View Documentation
+        </a>
+      </div>
+      <div class="hero-stats animate-in">
+        <div class="stat">
+          <span class="stat-value">&lt;1ms</span>
+          <span class="stat-label">Rule-based latency</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-value">9</span>
+          <span class="stat-label">Content categories</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-value">99.9%</span>
+          <span class="stat-label">Uptime SLA</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="section features" id="features">
+    <div class="container">
+      <div class="section-header animate-in">
+        <span class="section-label">Detection Categories</span>
+        <h2 class="section-title">Nine layers of protection.<br><span class="gradient-text">One API call.</span></h2>
+        <p class="section-desc">Comprehensive content moderation covering every category your platform needs. Each request scans across all categories simultaneously.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card animate-in">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 15s1.5-2 4-2 4 2 4 2M9 9h.01M15 9h.01"/></svg>
+          </div>
+          <h3>Hate Speech</h3>
+          <p>Detect racial, ethnic, religious, and identity-based hate speech with high accuracy.</p>
+        </div>
+        <div class="feature-card animate-in">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </div>
+          <h3>Harassment</h3>
+          <p>Identify bullying, threats, and targeted harassment patterns in user content.</p>
+        </div>
+        <div class="feature-card animate-in">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 19V5M5 12l7-7 7 7"/><line x1="4" y1="21" x2="20" y2="21"/></svg>
+          </div>
+          <h3>Profanity</h3>
+          <p>Filter explicit language with configurable severity levels and auto-masking support.</p>
+        </div>
+        <div class="feature-card animate-in">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+          </div>
+          <h3>Sexual Content</h3>
+          <p>Detect explicit and suggestive sexual content across multiple severity tiers.</p>
+        </div>
+        <div class="feature-card animate-in">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          <h3>Violence</h3>
+          <p>Flag violent threats, graphic descriptions, and glorification of violence.</p>
+        </div>
+        <div class="feature-card animate-in">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 8v4M12 16h.01"/></svg>
+          </div>
+          <h3>Self-Harm</h3>
+          <p>Sensitive detection of self-harm content with crisis resource integration support.</p>
+        </div>
+        <div class="feature-card animate-in">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 8h20M8 4v16"/></svg>
+          </div>
+          <h3>Spam</h3>
+          <p>Catch spam, scam attempts, and low-quality promotional content automatically.</p>
+        </div>
+        <div class="feature-card animate-in">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <h3>PII Detection</h3>
+          <p>Identify and redact personal information: emails, phone numbers, SSNs, addresses.</p>
+        </div>
+        <div class="feature-card animate-in">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+          </div>
+          <h3>Misinformation</h3>
+          <p>AI-powered detection of misleading claims and potential misinformation patterns.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it Works -->
+  <section class="section how-it-works" id="how-it-works">
+    <div class="container">
+      <div class="section-header animate-in">
+        <span class="section-label">Integration</span>
+        <h2 class="section-title">Three steps to <span class="gradient-text">safer content.</span></h2>
+        <p class="section-desc">Get up and running in minutes, not days. No SDKs to install — just HTTP.</p>
+      </div>
+      <div class="steps">
+        <div class="step animate-in">
+          <div class="step-number">01</div>
+          <h3>Register & get your key</h3>
+          <p>Sign up and receive your API key instantly. Free tier included — no credit card required.</p>
+        </div>
+        <div class="step-connector animate-in"></div>
+        <div class="step animate-in">
+          <div class="step-number">02</div>
+          <h3>Send your content</h3>
+          <p>POST text to our endpoint with your API key. That's it — one HTTP request.</p>
+        </div>
+        <div class="step-connector animate-in"></div>
+        <div class="step animate-in">
+          <div class="step-number">03</div>
+          <h3>Get instant results</h3>
+          <p>Receive detailed moderation results with categories, severity, confidence scores, and filtered text.</p>
+        </div>
+      </div>
+      <div class="code-section animate-in">
+        <div class="code-window">
+          <div class="code-header">
+            <div class="code-dots">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="code-tabs">
+              <button class="code-tab active" data-tab="request">Request</button>
+              <button class="code-tab" data-tab="response">Response</button>
+            </div>
+            <button class="code-copy" id="codeCopy" title="Copy to clipboard">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+            </button>
+          </div>
+          <div class="code-body">
+            <pre class="code-block" id="codeRequest"><code><span class="code-keyword">curl</span> -X POST https://shieldai-api-production.up.railway.app/v1/moderate/text \
+  -H <span class="code-string">"X-API-Key: shld_live_your_key"</span> \
+  -H <span class="code-string">"Content-Type: application/json"</span> \
+  -d <span class="code-string">'{"text": "Your content here"}'</span></code></pre>
+            <pre class="code-block hidden" id="codeResponse"><code>{
+  <span class="code-key">"flagged"</span>: <span class="code-bool">true</span>,
+  <span class="code-key">"overall_severity"</span>: <span class="code-string">"medium"</span>,
+  <span class="code-key">"categories"</span>: [
+    {
+      <span class="code-key">"category"</span>: <span class="code-string">"profanity"</span>,
+      <span class="code-key">"flagged"</span>: <span class="code-bool">true</span>,
+      <span class="code-key">"confidence"</span>: <span class="code-number">0.95</span>
+    }
+  ],
+  <span class="code-key">"filtered_text"</span>: <span class="code-string">"This is ****"</span>,
+  <span class="code-key">"processing_time_ms"</span>: <span class="code-number">5.2</span>
+}</code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BYOK -->
+  <section class="section byok" id="byok">
+    <div class="container">
+      <div class="byok-layout">
+        <div class="byok-content animate-in">
+          <span class="section-label">Bring Your Own Key</span>
+          <h2 class="section-title">Your AI provider.<br><span class="gradient-text">Our infrastructure.</span></h2>
+          <p class="byok-desc">
+            ShieldAI's free tier uses a blazing-fast rule-based engine for instant moderation. 
+            Want deeper, context-aware AI analysis? Plug in your own OpenAI or Anthropic API key 
+            and unlock multi-model content understanding — without vendor lock-in.
+          </p>
+          <div class="byok-tiers">
+            <div class="byok-tier">
+              <div class="byok-tier-header">
+                <span class="byok-tier-icon">⚡</span>
+                <h4>Rule-Based Engine</h4>
+              </div>
+              <ul>
+                <li>Pattern matching &amp; keyword detection</li>
+                <li>Sub-millisecond response times</li>
+                <li>No external API costs</li>
+                <li>Perfect for high-volume filtering</li>
+              </ul>
+            </div>
+            <div class="byok-tier">
+              <div class="byok-tier-header">
+                <span class="byok-tier-icon">🧠</span>
+                <h4>AI-Powered Analysis</h4>
+              </div>
+              <ul>
+                <li>Context-aware content understanding</li>
+                <li>Nuanced severity scoring</li>
+                <li>Sarcasm &amp; intent detection</li>
+                <li>Use your own OpenAI / Anthropic key</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="byok-visual animate-in">
+          <div class="byok-diagram">
+            <div class="byok-node byok-input">
+              <span>Your Content</span>
+            </div>
+            <div class="byok-arrow">→</div>
+            <div class="byok-node byok-shield">
+              <span>🛡️ ShieldAI</span>
+            </div>
+            <div class="byok-branches">
+              <div class="byok-branch">
+                <div class="byok-arrow-down">↓</div>
+                <div class="byok-node byok-rule">
+                  <span>⚡ Rules</span>
+                  <small>~1ms</small>
+                </div>
+              </div>
+              <div class="byok-branch">
+                <div class="byok-arrow-down">↓</div>
+                <div class="byok-node byok-ai">
+                  <span>🧠 AI</span>
+                  <small>~500ms</small>
+                </div>
+              </div>
+            </div>
+            <div class="byok-arrow">→</div>
+            <div class="byok-node byok-output">
+              <span>Results</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="section pricing" id="pricing">
+    <div class="container">
+      <div class="section-header animate-in">
+        <span class="section-label">Pricing</span>
+        <h2 class="section-title">Start free. <span class="gradient-text">Scale fearlessly.</span></h2>
+        <p class="section-desc">No surprise bills. Predictable pricing that grows with your platform.</p>
+      </div>
+      <div class="pricing-grid">
+        <div class="pricing-card animate-in">
+          <div class="pricing-header">
+            <h3>Free</h3>
+            <div class="pricing-price">
+              <span class="price-amount">$0</span>
+              <span class="price-period">/forever</span>
+            </div>
+            <p class="pricing-desc">Perfect for prototyping and small projects.</p>
+          </div>
+          <ul class="pricing-features">
+            <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3 7-7" stroke="#00D4FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>100 requests / hour</li>
+            <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3 7-7" stroke="#00D4FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Rule-based engine only</li>
+            <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3 7-7" stroke="#00D4FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>All 9 categories</li>
+            <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3 7-7" stroke="#00D4FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Community support</li>
+          </ul>
+          <a href="#" class="btn btn-outline btn-block">Get Started Free</a>
+        </div>
+        <div class="pricing-card pricing-popular animate-in">
+          <div class="pricing-badge">Most Popular</div>
+          <div class="pricing-header">
+            <h3>Pro</h3>
+            <div class="pricing-price">
+              <span class="price-amount">$29</span>
+              <span class="price-period">/month</span>
+            </div>
+            <p class="pricing-desc">For growing apps that need AI-powered moderation.</p>
+          </div>
+          <ul class="pricing-features">
+            <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3 7-7" stroke="#00D4FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>1,000 requests / hour</li>
+            <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3 7-7" stroke="#00D4FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>AI-powered analysis</li>
+            <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3 7-7" stroke="#00D4FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>BYOK support</li>
+            <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3 7-7" stroke="#00D4FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Email support</li>
+            <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3 7-7" stroke="#00D4FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Dashboard analytics</li>
+          </ul>
+          <a href="#" class="btn btn-primary btn-block">Start Pro Trial</a>
+        </div>
+        <div class="pricing-card animate-in">
+          <div class="pricing-header">
+            <h3>Enterprise</h3>
+            <div class="pricing-price">
+              <span class="price-amount">$99</span>
+              <span class="price-period">/month</span>
+            </div>
+            <p class="pricing-desc">For platforms that demand reliability and scale.</p>
+          </div>
+          <ul class="pricing-features">
+            <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3 7-7" stroke="#00D4FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>10,000 requests / hour</li>
+            <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3 7-7" stroke="#00D4FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Priority AI analysis</li>
+            <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3 7-7" stroke="#00D4FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>BYOK support</li>
+            <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3 7-7" stroke="#00D4FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>99.9% uptime SLA</li>
+            <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3 7-7" stroke="#00D4FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Dedicated support</li>
+            <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8l3 3 7-7" stroke="#00D4FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Custom rate limits</li>
+          </ul>
+          <a href="#" class="btn btn-outline btn-block">Contact Sales</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Live Demo -->
+  <section class="section demo" id="demo">
+    <div class="container">
+      <div class="section-header animate-in">
+        <span class="section-label">Try It Now</span>
+        <h2 class="section-title">See ShieldAI <span class="gradient-text">in action.</span></h2>
+        <p class="section-desc">Paste any text below and watch our moderation engine analyze it in real-time.</p>
+      </div>
+      <div class="demo-container animate-in">
+        <div class="demo-input-section">
+          <label for="demoInput" class="demo-label">Input Text</label>
+          <textarea id="demoInput" class="demo-textarea" rows="4" placeholder="Type or paste text to moderate...">I hate you so much, you stupid idiot! Call me at 555-123-4567.</textarea>
+          <div class="demo-actions">
+            <button class="btn btn-primary" id="demoSubmit">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              Analyze Text
+            </button>
+            <button class="btn btn-ghost" id="demoClear">Clear</button>
+            <div class="demo-mode">
+              <label class="toggle-label">
+                <input type="checkbox" id="demoLive" checked>
+                <span class="toggle-switch"></span>
+                <span>Mock Mode</span>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="demo-output-section">
+          <div class="demo-label">Moderation Result</div>
+          <div class="demo-result" id="demoResult">
+            <div class="demo-placeholder">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.3"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              <p>Click "Analyze Text" to see results</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section cta">
+    <div class="container">
+      <div class="cta-box animate-in">
+        <h2>Ready to protect your platform?</h2>
+        <p>Join developers building safer communities with ShieldAI. Start free — no credit card required.</p>
+        <div class="cta-actions">
+          <a href="#pricing" class="btn btn-primary btn-lg">Get Your API Key</a>
+          <a href="https://shieldai-api-production.up.railway.app/docs" target="_blank" class="btn btn-ghost btn-lg">Read the Docs</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="nav-logo">
+            <span class="nav-logo-icon">🛡️</span>
+            <span class="nav-logo-text">ShieldAI</span>
+          </a>
+          <p>AI-powered content moderation API for developers who care about community safety.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Product</h4>
+          <a href="#features">Features</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#demo">Live Demo</a>
+          <a href="#byok">BYOK</a>
+        </div>
+        <div class="footer-col">
+          <h4>Developers</h4>
+          <a href="https://shieldai-api-production.up.railway.app/docs" target="_blank">API Documentation</a>
+          <a href="#">RapidAPI Marketplace</a>
+          <a href="#">Status Page</a>
+          <a href="#">Changelog</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="#">About</a>
+          <a href="#">Blog</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 ShieldAI. All rights reserved.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="GitHub">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          </a>
+          <a href="#" aria-label="Twitter">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
